@@ -33,9 +33,9 @@ void SearchPanel::refresh() {
   if (show_results_) {
     wattron(window_, COLOR_PAIR(CP_DEFAULT_GREY));
     std::string background(width_, ' ');
-    mvwprintw(window_, 0, 0, background.c_str());
+    mvwprintw(window_, 0, 0, "%s", background.c_str());
     std::string text = "match: " + filter_.getSearch();
-    mvwprintw(window_, 0, 0, text.c_str());
+    mvwprintw(window_, 0, 0, "%s", text.c_str());
 
     std::string help = "  Press Enter/Backspace to move forward/backward through search results";
     if (help.length() + text.length() <= width_) {
